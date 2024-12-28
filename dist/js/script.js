@@ -1,3 +1,5 @@
+import hamburgerButton from "./hamburger.js";
+
 // Navbar Fixed
 window.onscroll = () => {
   const header = document.querySelector("header");
@@ -12,14 +14,4 @@ window.onscroll = () => {
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("hamburger-active");
-
-  if (navMenu.classList.contains("invisible")) {
-    navMenu.classList.remove("opacity-0", "invisible");
-    navMenu.classList.add("opacity-100", "visible");
-  } else {
-    navMenu.classList.add("opacity-0", "invisible");
-    navMenu.classList.remove("opacity-100", "visible");
-  }
-});
+hamburger.addEventListener("click", () => hamburgerButton(hamburger, navMenu));
